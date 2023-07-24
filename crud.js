@@ -30,12 +30,14 @@ function create() {
     document.querySelector(".input-form").style.display = "block"
     document.querySelector(".create").style.display = "none"
 
+    document.querySelector(".table").style.opacity = 0.15;
+
 }
 
 function add() {
     let name = document.querySelector("#name").value
     let email = document.querySelector("#email").value
-
+    document.querySelector(".table").style.opacity = 1;
     let new_object = {
         id:id, name:name, email:email
     }
@@ -51,6 +53,11 @@ function add() {
 
 function edit(id) {
     document.querySelector(".update-form").style.display = "block"
+    document.querySelector(".input-form").style.display = "none"
+    document.querySelector(".create").style.display = "none"
+    
+    document.querySelector(".table").style.opacity = 0.15;
+
     let obj = list.find(prop => prop.id === id)
     document.querySelector("#uid").value = obj.id
     document.querySelector("#uname").value = obj.name
@@ -58,6 +65,8 @@ function edit(id) {
 }
 
 function update() {
+
+    document.querySelector(".table").style.opacity = 1;
     let id = parseInt(document.querySelector("#uid").value)
     let name = document.querySelector("#uname").value
     let email = document.querySelector("#uemail").value

@@ -8,21 +8,45 @@
 </head>
 <body onload="readAll()">
     <div class="container">
-        <form action="" class="input-form">
-            <label>Name : <input type="text" name="name" id="name"></label>
-            <label>E-mail : <input type="email" name="email" id="email"></label>
-            <button type="button" onclick="add()">Add</button>
-        </form>
-        <form action="" class="update-form">
-            <label hidden>id : <input type="text" name="uid" id="uid"></label>
-            <label>Name : <input type="text" name="uname" id="uname"></label>
-            <label>E-mail : <input type="email" name="uemail" id="uemail"></label>
-            <button type="button" onclick="update()">update</button>
-        </form>
+        <div class="add-container">
+            <!-- <form action="" class="input-form"> -->
+                <div class="form input-form">
+                    <div>
+                    <label>Name : <input type="text" name="name" id="name"></label>
+                    </div>
+                    <div>
+                    <label>E-mail : <input type="email" name="email" id="email"></label>
+                    </div>
+                    <div class="button">
+                    <button type="button" onclick="add()">Add</button>
+                    </div>
+                </div>
+                
+            <!-- </form> -->
+        </div>
+        
+        <!-- <form action="" class="update-form"> -->
+            <div class="form update-form">
+                <div>
+                <label hidden>id : <input type="text" name="uid" id="uid"></label>
+                </div>
+                <div>
+                    <label>Name : <input type="text" name="uname" id="uname"></label>
+                
+                </div>
+                <div>
+                <label>E-mail : <input type="email" name="uemail" id="uemail"></label>
+                </div>
+                <div>
+                <button type="button" onclick="update()">update</button>
+                </div>
+            </div>
+            
+        <!-- </form> -->
         <div class="create">
             <button onclick="create()">Add</button>
         </div>
-        <table border="2">
+        <table class="table" border="2">
             <thead>
                 <th>Name</th>
                 <th>E-Mail</th>

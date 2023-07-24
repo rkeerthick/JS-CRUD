@@ -1,3 +1,49 @@
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px;
+    border: 2px solid black;
+    padding: 50px;
+}
+
+.form div {
+    margin: 20px;
+}
+
+label {
+    font-size: 24px;
+}
+
+input {
+    padding: 15px;
+    font-size: 18px;
+}
+
+button {
+    padding: 12px;
+    font-size: 24px;
+}
+
+table {
+    /* padding: 20px; */
+}
+
+th, td {
+    padding: 10px 30px;
+}
+
 .input-form {
     /* visibility: hidden; */
     display: none;
