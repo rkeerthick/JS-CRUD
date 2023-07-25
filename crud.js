@@ -1,7 +1,6 @@
 let list = [
-    {id:1, name:"aaa", email:"a@mail.com"}, {id:2, name:"bbb", email:"b@mail.com"}
+    {id:101, name:"aaa", email:"a@mail.com"}, {id:102, name:"bbb", email:"b@mail.com"}
 ]
-let id = 3
 function readAll() {
     localStorage.setItem("object", JSON.stringify(list))
     let table_data = document.querySelector(".form-table")
@@ -13,6 +12,7 @@ function readAll() {
     obj_data.map((prop) => (
         element += `
         <tr>
+            <td>${prop.iid}</td>
             <td>${prop.name}</td>
             <td>${prop.email}</td>
             <td>
@@ -35,9 +35,15 @@ function create() {
 }
 
 function add() {
+    let eid = document.querySelector("#eid").value
     let name = document.querySelector("#name").value
     let email = document.querySelector("#email").value
     document.querySelector(".table").style.opacity = 1;
+    for(let i=0; i<list.length; i++) {
+        if(list[i].id === eid) {
+            alert("user already exist")
+        }
+    }
     let new_object = {
         id:id, name:name, email:email
     }
