@@ -12,7 +12,7 @@ function readAll() {
     obj_data.map((prop) => (
         element += `
         <tr>
-            <td>${prop.iid}</td>
+            <td>${prop.id}</td>
             <td>${prop.name}</td>
             <td>${prop.email}</td>
             <td>
@@ -35,20 +35,21 @@ function create() {
 }
 
 function add() {
-    let eid = document.querySelector("#eid").value
+    let eid = parseInt(document.querySelector("#eid").value)
     let name = document.querySelector("#name").value
     let email = document.querySelector("#email").value
     document.querySelector(".table").style.opacity = 1;
     for(let i=0; i<list.length; i++) {
+        console.log(list[i]);
         if(list[i].id === eid) {
             alert("user already exist")
+            document.querySelector(".input-form").style.display = "none"
+            return
         }
     }
     let new_object = {
-        id:id, name:name, email:email
+        id:eid, name:name, email:email
     }
-    id++;
-
     list.push(new_object)
 
     document.querySelector(".input-form").style.display = "none"
@@ -77,7 +78,7 @@ function update() {
     let name = document.querySelector("#uname").value
     let email = document.querySelector("#uemail").value
     let index = list.findIndex(prop => prop.id === id)
-    list[index] = {id, name, email}
+    list[index] = {id, name, email}    
 
     document.querySelector(".update-form").style.display = "none"
     document.querySelector(".create").style.display = "block"
